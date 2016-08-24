@@ -1,0 +1,19 @@
+<div id="steps" class="carousel slide">
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <div id="step1">
+        <%= render "step1", feedback: @feedback, step: 1 %>
+      </div>
+    </div>
+    <div class="item">
+      <div id="step2">
+        <%= render "step2", feedback: @feedback, step: 2 %>
+      </div>
+    </div>
+    <div class="item">
+      <div id="step3">
+        <%= render "step3", feedback: @feedback, step: 3 %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<%= simple_form_for feedback, remote: true do |f| %>
+  <%= f.input :rating, collection: (1..5), as: :radio_buttons %>
+  <%= f.input :step, as: :hidden, input_html: { value: step.to_s } %>
+  <%= f.button :submit %>
+<% end %>

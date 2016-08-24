@@ -1,0 +1,9 @@
+$("#step<%= @feedback.step %>").html('<%= j render "step#{@feedback.step}", feedback: @feedback, step: @feedback.step %>');
+<% unless @feedback.errors.any? %>
+  <% if @feedback.step == "3" %>
+    window.location.replace("<%= feedback_path(@feedback) %>");
+  <% else %>
+    $("#step<%= (@feedback.step.to_i + 1) %>").html('<%= j render "step#{@feedback.step.to_i + 1}", feedback: @feedback, step: (@feedback.step.to_i + 1).to_s %>');
+    $('#steps').carousel(<%= @feedback.step.to_i %>).carousel('pause');
+  <% end %>
+<% end %>

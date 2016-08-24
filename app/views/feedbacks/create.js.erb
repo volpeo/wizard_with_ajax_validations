@@ -1,0 +1,6 @@
+$("#step1").html('<%= j render "step1", feedback: @feedback, step: 1 %>');
+<% unless @feedback.errors.any? %>
+  console.log("everything's fine");
+  $("#step2").html('<%= j render "step2", feedback: @feedback, step: 2 %>');
+  $('#steps').carousel(<%= @feedback.step.to_i %>).carousel('pause');
+<% end %>
